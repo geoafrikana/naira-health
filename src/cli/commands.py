@@ -1,7 +1,7 @@
 import click
 from .download import (download_hf, extract_hf,
                        DATA_DIR)
-from .wrangle import clean_data
+from .wrangle import clean_point_geojson
 
 @click.command()
 @click.option('--geometries', '-g',
@@ -32,4 +32,6 @@ def extract(geometries):
 @click.command()
 def clean():
     """Clean columns in health facilities GeoJSONs"""
-    clean_data()
+    click.echo("cleaning point geojson")
+    clean_point_geojson()
+    click.echo("cleaned point geojson")

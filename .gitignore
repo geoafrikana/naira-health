@@ -2,9 +2,8 @@
 .venv/
 
 # Data files
-data/*.geojson
-data/*.json
-data/*.zip
+data/*
+!data/.gitkeep
 
 # Compiled Python files
 __pycache__/
@@ -19,3 +18,4 @@ uv.lock
 # Miscellaneous
 *.log
 .DS_Store
+*gpkg

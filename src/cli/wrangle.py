@@ -3,13 +3,16 @@ import pandas as pd
 import geopandas as gpd
 from constants import DATA_DIR
 import sqlite3
+from constants import DB_PATH
 
-def clean_data():
+def clean_point_geojson():
     geojsons = glob.glob(str(DATA_DIR / '*.geojson'))
     gdf = [gpd.read_file(geojson) for geojson in geojsons if 'point' in geojson][0]
+
     splitted = gdf['healthcare:speciality'].str.split(';', expand=True).reset_index(names=['hf_id'])
     relationship_df = splitted.melt(id_vars='hf_id', 
                                     value_name='speciality').dropna()
+    
     relationship_df = relationship_df[['hf_id',
                                        'speciality']].reset_index(drop=True)
     speciality_df = pd.DataFrame({
@@ -21,11 +24,8 @@ def clean_data():
           'osm_type', 'capacity:persons',
           'healthcare:speciality'
           ], axis=1)
-    hf.to_file(
-    'hf.gpkg',
-    driver='GPKG',
-    layer='health_facility')
-    conn = sqlite3.connect('hf.gpkg')
+    hf.to_file(DB_PATH, driver='GPKG', layer='health_facility')
+    conn = sqlite3.connect(DB_PATH)
     relationship_df.to_sql(name="facility_speciality",
                        con=conn,
                        index=False,
