@@ -1,0 +1,3 @@
+.venv/
+data/*.geojson
+data/*.json

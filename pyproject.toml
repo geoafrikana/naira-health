@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "naira-health"
+version = "0.1.0"
+description = "A Python-based data visualization pipeline for analyzing and presenting Nigeria's health facility data."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "click>=8.1.7",
+    "requests>=2.32.3",
+]
+authors = [
+    {name = "Nasiru Olagunju", email = "spatialnasir@gmail.com"},
+]
+
+[project.scripts]
+naira-health = "cli:cli"
