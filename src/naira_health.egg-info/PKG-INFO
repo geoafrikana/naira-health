@@ -1,9 +1,0 @@
-Metadata-Version: 2.1
-Name: naira-health
-Version: 0.1.0
-Summary: A Python-based data visualization pipeline for analyzing and presenting Nigeria's health facility data.
-Author-email: Nasiru Olagunju <spatialnasir@gmail.com>
-Requires-Python: >=3.12
-Description-Content-Type: text/markdown
-Requires-Dist: click>=8.1.7
-Requires-Dist: requests>=2.32.3

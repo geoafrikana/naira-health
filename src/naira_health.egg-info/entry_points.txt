@@ -1,2 +1,0 @@
-[console_scripts]
-naira-health = cli:cli

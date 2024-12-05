@@ -1,3 +1,21 @@
+# Virtual environments
 .venv/
+
+# Data files
 data/*.geojson
 data/*.json
+data/*.zip
+
+# Compiled Python files
+__pycache__/
+*.py[cod]
+
+# Build artifacts
+src/naira_health.egg-info/
+
+# Lock file
+uv.lock
+
+# Miscellaneous
+*.log
+.DS_Store

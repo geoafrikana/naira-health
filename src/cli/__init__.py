@@ -8,4 +8,5 @@ def cli():
 
 cli.add_command(commands.download)
 cli.add_command(commands.extract)
+cli.add_command(commands.clean)
 
