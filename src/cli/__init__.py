@@ -6,7 +6,4 @@ from . import commands
 def cli():
     pass
 
-cli.add_command(commands.download)
-cli.add_command(commands.extract)
-cli.add_command(commands.clean)
-
+cli.add_command(commands.etl)
